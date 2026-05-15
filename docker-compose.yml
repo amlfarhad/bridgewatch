@@ -1,0 +1,14 @@
+services:
+  bridgewatch:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      BRIDGEWATCH_DB: /app/data/bridgewatch.db
+      BRIDGEWATCH_API_KEY: local-operator-key
+    volumes:
+      - bridgewatch-data:/app/data
+
+volumes:
+  bridgewatch-data:
+

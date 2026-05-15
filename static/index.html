@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bridgewatch</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">Enterprise integration reliability</p>
+      <h1>Bridgewatch</h1>
+    </div>
+    <div class="actions">
+      <input id="apiKey" type="password" value="local-operator-key" aria-label="Operator API key" />
+      <button id="ingestBtn">Ingest Sample</button>
+      <button id="runBtn">Run Validation</button>
+      <button id="retryBtn">Process Retries</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="metrics" id="metrics"></section>
+
+    <section class="grid">
+      <article>
+        <div class="section-head">
+          <h2>Open Incidents</h2>
+          <span id="incidentCount"></span>
+        </div>
+        <div id="incidents" class="list"></div>
+      </article>
+
+      <article>
+        <div class="section-head">
+          <h2>Retry Queue</h2>
+          <span id="retryCount"></span>
+        </div>
+        <div id="retries" class="list"></div>
+      </article>
+    </section>
+
+    <section class="grid">
+      <article>
+        <div class="section-head">
+          <h2>Validation Findings</h2>
+          <span id="findingCount"></span>
+        </div>
+        <div id="findings" class="list compact"></div>
+      </article>
+
+      <article>
+        <div class="section-head">
+          <h2>Runbooks</h2>
+          <span>Operator docs</span>
+        </div>
+        <div id="runbooks" class="list compact"></div>
+      </article>
+    </section>
+  </main>
+
+  <div id="toast" role="status"></div>
+  <script src="/static/app.js"></script>
+</body>
+</html>
+
